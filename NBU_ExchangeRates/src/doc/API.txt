@@ -4,6 +4,10 @@
 
 https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json
 
+[{ 
+"r030":36,"txt":"Австралійський долар","rate":16.4814,"cc":"AUD","exchangedate":"11.01.2020"
+ }]
+
 
 Курс на дату (задається у форматі YYYYMMDD, де YYYY - рік, MM - місяць, DD - день):
 
@@ -14,6 +18,11 @@ https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?date=20200110&json
 
 https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=EUR&date=20200110&json
 
+[
+{ 
+"r030":978,"txt":"Євро","rate":26.7998,"cc":"EUR","exchangedate":"10.01.2020"
+ }
+]
 
 
 Примітка: Поточного дня буде відображатися офіційний курс гривні до іноземних валют, 
