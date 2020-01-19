@@ -3,7 +3,6 @@ package nbu_exchangerates.view;
 
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
-import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 import nbu_exchangerates.dataModel.*;
 
 public class View  extends JFrame {
@@ -21,12 +20,20 @@ public class View  extends JFrame {
         me = this;
     }
     
-    public void init() {
+    /**
+     * Creates the application abstract general view (frame)
+     * @return self for chain-calling
+     */
+    public View init() {
         this.setLayout(new BorderLayout(0, 0));
         this.setAutoRequestFocus(true);
         this.setLocationByPlatform(true);
+        return this;
     }
     
+    /**
+     * Shows the application abstract general view (frame)
+     */
     public void run() {
         this.pack();
         this.setVisible(true);

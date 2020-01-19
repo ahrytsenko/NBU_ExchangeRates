@@ -15,9 +15,7 @@ public class Controller {
     }
     
     public void runApplication() {
-        MainView mainView = new MainView(model);
-        mainView.init();
-        mainView.run();
+        new MainView(model).init().run();
     }
     
 }

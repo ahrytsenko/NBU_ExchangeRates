@@ -5,17 +5,13 @@ import java.awt.event.*;
 import java.io.*;
 import java.util.logging.*;
 import javax.swing.*;
-import javax.swing.border.*;
-import javax.swing.table.*;
 import nbu_exchangerates.dataModel.*;
 
 public class MainView extends View {
 
     private final JButton btnClose;
     private final JPanel pnlBottom;
-    private final JTable table;
-    private final JScrollPane tblScrollPane;
-    private final DefaultTableModel tblModel;
+    private MainViewTable table;
 
     public MainView(Model model) {
         this(null, model);
@@ -25,13 +21,17 @@ public class MainView extends View {
         super(title, model);
         btnClose = new JButton("Close");
         pnlBottom = new JPanel();
-        table = new JTable();
-        tblScrollPane = new JScrollPane(table);
-        tblModel = new DefaultTableModel(0, 0);
+        
+        try {
+            table = new MainViewTable(model.getTableData(), model.getTableHeader());
+        } catch (IOException ex) {
+            Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
     }
 
     @Override
-    public void init() {
+    public View init() {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         btnClose.addActionListener((ActionEvent e) -> {
             me.dispose();
@@ -41,17 +41,12 @@ public class MainView extends View {
         this.add(pnlBottom, BorderLayout.SOUTH);
 
         try {
-            tblModel.setDataVector(model.getTableData(), model.getTableHeader());
+            table = new MainViewTable(model.getTableData(), model.getTableHeader());
+            this.add(table.getTable(), BorderLayout.CENTER);
         } catch (IOException ex) {
             Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        table.setModel(tblModel);
-        tblScrollPane.setPreferredSize(new Dimension(800, 480));
-        tblScrollPane.setBorder(BorderFactory.createTitledBorder(
-                BorderFactory.createEtchedBorder(), "  NBU currency exchange rates ",
-                TitledBorder.CENTER, TitledBorder.TOP));
-        tblScrollPane.setWheelScrollingEnabled(true);
-        this.add(tblScrollPane, BorderLayout.CENTER);
-
+        
+        return this;
     }
 }
