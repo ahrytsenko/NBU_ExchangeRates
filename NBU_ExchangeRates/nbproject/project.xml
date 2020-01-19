@@ -5,6 +5,7 @@
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
             <name>NBU_ExchangeRates</name>
             <source-roots>
+                <root id="src.ext_classes.dir"/>
                 <root id="src.dir"/>
             </source-roots>
             <test-roots>
