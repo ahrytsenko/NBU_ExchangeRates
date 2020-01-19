@@ -42,7 +42,6 @@ public class CurrencyRate {
                 "\"cc\":\""+currencyCode+"\","+
                 "\"exchangedate\":\""+exchangeDate+"\""+
                 "}";
-
     }
     
     public static Object[] getFieldsName() {

@@ -20,9 +20,6 @@ public class MainView extends JFrame {
     private final JFrame me;
     private final Model model;
     
-    
-
-    
     public MainView() {
         super("NBU Currency Exchange Rates");
         btnClose = new JButton("Close");
