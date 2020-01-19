@@ -20,7 +20,6 @@ public class Model {
 
     public String getCurrencyRate() throws IOException {
         
-        JSimpleHTTP http = new JSimpleHTTP("Java NBU Currency Rates");
         http.setRequestURL("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json", true);
         
         try {
@@ -33,7 +32,7 @@ public class Model {
                 return rates;
             }
         }
-        catch (Exception e) {
+        catch (IOException e) {
             return rates;
         }
     }

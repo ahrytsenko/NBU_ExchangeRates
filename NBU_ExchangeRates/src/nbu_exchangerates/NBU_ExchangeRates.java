@@ -1,6 +1,9 @@
 package nbu_exchangerates;
 
 //import nbu_exchangerates.dataModel.*;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import nbu_exchangerates.Views.*;
 
 public class NBU_ExchangeRates {
