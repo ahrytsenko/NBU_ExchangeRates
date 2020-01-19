@@ -35,20 +35,20 @@ public class CurrencyRate {
     }
 
     public String toJSON() {
-        return "{"+
-                "\"r030\":"+currencyID+","+
-                "\"txt\":\""+currencyName+"\","+
-                "\"rate\":"+rate+","+
-                "\"cc\":\""+currencyCode+"\","+
-                "\"exchangedate\":\""+exchangeDate+"\""+
-                "}";
+        return "{"
+                + "\"r030\":" + currencyID + ","
+                + "\"txt\":\"" + currencyName + "\","
+                + "\"rate\":" + rate + ","
+                + "\"cc\":\"" + currencyCode + "\","
+                + "\"exchangedate\":\"" + exchangeDate + "\""
+                + "}";
     }
-    
+
     public static Object[] getFieldsName() {
         Object[] fieldNames = {"Currency ID", "Currency Code", "Currency Name", "Currency Rate", "Exchange Date"};
         return fieldNames;
     }
-    
+
     public Object[] getFieldsValue() {
         Object[] row = new Object[5];
         row[0] = currencyID;
