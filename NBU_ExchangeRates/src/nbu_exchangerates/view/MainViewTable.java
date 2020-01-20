@@ -13,6 +13,8 @@ public class MainViewTable extends ScrolledTable {
         tblScrollPane.setBorder(BorderFactory.createTitledBorder(
                 BorderFactory.createEtchedBorder(), "  NBU currency exchange rates ",
                 TitledBorder.CENTER, TitledBorder.TOP));
+        table.setAutoCreateRowSorter(true);
+        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     }
 
 }
