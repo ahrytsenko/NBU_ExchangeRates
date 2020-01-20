@@ -9,13 +9,11 @@ public class Controller {
     private final Model model;
     
     public Controller() {
-        
         model = new Model();
-        
     }
     
     public void runApplication() {
-        new MainView(model).init().run();
+        new MainView("NBU Currency Rates", model).init().run();
     }
     
 }
